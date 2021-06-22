@@ -20,7 +20,6 @@ function RandomCat(){
             fetchData()
         }, 2000)
 
-
     }, [])
 
     if(catFact === null) return null;
