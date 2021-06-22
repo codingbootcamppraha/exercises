@@ -13,7 +13,10 @@ function Joke() {
     }
 
     useEffect( () => {
+        // Joke has changed, lets hide the delivery
         setDeliveryVisible( false );
+
+        // if joke exists and it is type `twopart` lets show deliver after 3000 ms
         if ( joke && joke.type === 'twopart' ) {
             setTimeout( () => setDeliveryVisible( true ), 3000 );
         }
@@ -50,7 +53,7 @@ function Joke() {
                 Fetch!
             </button>
         </div>
-    )   
+    )
 }
 
 export default Joke
