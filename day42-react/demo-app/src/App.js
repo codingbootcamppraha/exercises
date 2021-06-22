@@ -2,6 +2,9 @@ import {useState} from "react";
 import Greeting from './Greeting';
 import UserList from "./UserList";
 import HooksExample from "./HooksExample";
+import Counter from "./Counter";
+import FetchPromises from "./FetchPromises";
+import FetchAsync from "./FetchAsync";
 
 function App() {
 
@@ -15,7 +18,7 @@ function App() {
     const names = ['world', 'Slavo', 'Ondrej', 'Jan', 'Jana', 'Jade'];
 
     const greetings = names
-        .filter((n, i) => i < 6)
+        .filter( ( n, i ) => i < 6 )
         .map( ( n, i ) => (
             <Greeting key={i} name={n}/>
         ) );
@@ -23,9 +26,14 @@ function App() {
     return (
         <div>
 
+            <FetchPromises/>
+            <FetchAsync/>
+
+            <Counter/>
+
             <HooksExample/>
 
-            { greetings }
+            {greetings}
 
             <Greeting name="world"/>
             <Greeting name="Slavo"/>

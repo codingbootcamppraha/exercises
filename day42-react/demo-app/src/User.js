@@ -6,10 +6,10 @@ function User(props) {
     // name = props.name
     // rank = props.rank
 
-    console.log(
-        'Right now selected user is',
-        props.selectedUser
-    )
+    // console.log(
+        // 'Right now selected user is',
+        // props.selectedUser
+    // )
 
     return (
         <div className="User">

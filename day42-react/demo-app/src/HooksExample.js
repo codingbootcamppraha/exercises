@@ -4,7 +4,13 @@ function HooksExample() {
     const [count, setCount] = useState(0);
     const [count2, setCount2] = useState(0);
 
-    console.log('rendering HooksExample component');
+    // console.log('rendering HooksExample component');
+
+    useEffect(() => {
+
+        console.log('something has changed')
+
+    });
 
     useEffect(() => {
 
