@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Cocktail from './Components/Cocktail';
 import SearchBar from './Components/SearchBar';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import SearchResults from './Components/SearchResults';
 
 function App() {
   const [randomDrink, setRandomDrink] = useState(null);
@@ -33,14 +35,23 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar setSearchQuery={setSearchQuery} />
-      {searchQuery}
-      {
-        randomDrink && (
-          <Cocktail title={randomDrink.strDrink} image={randomDrink.strDrinkThumb} />
-        )
-      }
-     
+      <BrowserRouter>
+        <SearchBar setSearchQuery={setSearchQuery} />
+      
+        <Switch>
+
+          <Route 
+            exact
+            path="/" 
+            component={
+              () => randomDrink ? 
+              <Cocktail title={randomDrink.strDrink} image={randomDrink.strDrinkThumb} /> 
+              : "No cocktail"}
+          />
+          <Route path="/search" component={SearchResults} />
+
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

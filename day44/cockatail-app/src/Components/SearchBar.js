@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function SearchBar(props) {
 
   function handleSubmit(event) {
@@ -8,7 +10,7 @@ function SearchBar(props) {
   return (
     <form onSubmit={(event) => handleSubmit(event)} className="SearchBar">
       <input name="cocktailSearch" />
-      <button type="submit">Search</button>
+      <Link to="/search">Search</Link>
     </form>
   );
 }
