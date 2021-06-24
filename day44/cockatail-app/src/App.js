@@ -8,10 +8,8 @@ import SearchResults from './Components/SearchResults';
 function App() {
   const [randomDrink, setRandomDrink] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
   
   const randomUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-  const searchUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
   async function fetchRandomCoctail() {
     const resp = await fetch(randomUrl);
@@ -19,24 +17,14 @@ function App() {
     setRandomDrink(data.drinks[0]);
   }
 
-  async function fetchSearchResults() {
-    const resp = await fetch(searchUrl + searchQuery);
-    const data = await resp.json();
-    setSearchResults(data.drinks);
-  }
-
   useEffect(() => {
     fetchRandomCoctail();
   },[])
 
-  useEffect(() => {
-    searchQuery && fetchSearchResults();
-  }, [searchQuery])
-
   return (
     <div className="App">
       <BrowserRouter>
-        <SearchBar setSearchQuery={setSearchQuery} />
+        <SearchBar setSearchQuery={setSearchQuery} searchQuery={searchQuery} />
       
         <Switch>
 
@@ -48,7 +36,7 @@ function App() {
               <Cocktail title={randomDrink.strDrink} image={randomDrink.strDrinkThumb} /> 
               : "No cocktail"}
           />
-          <Route path="/search" component={SearchResults} />
+          <Route path="/search/:query" component={SearchResults} />
 
         </Switch>
       </BrowserRouter>
