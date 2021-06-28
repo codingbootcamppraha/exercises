@@ -1,0 +1,19 @@
+# Windows generated files
+Thumbs.db
+desktop.ini
+ 
+# OS X Generated files
+.DS_Store
+.Spotlight-V100
+.Trashes
+._*
+ 
+# VS Code Settings
+.vscode
+ 
+# Node.js modules
+node_modules
+
+# Project build
+dist
+
