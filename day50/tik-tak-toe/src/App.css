@@ -1,0 +1,21 @@
+.app {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.spot {
+  border: 1px solid black;
+  height: 2rem;
+  width: 2rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.spot-winning {
+  color: red;
+}
