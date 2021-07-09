@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Product(props) {
 
@@ -14,6 +14,30 @@ export default function Product(props) {
         });
     }
 
+    const amount_in_cart = useSelector(state => {
+
+        let aggregate = state.cart.products.reduce((aggregate, product_id) => {
+
+            if (product_id === props.id) {
+                return aggregate+1;
+            }
+            return aggregate;
+
+        }, 0)
+
+        return aggregate;
+
+        // let amount = 0;
+
+        // state.cart.products.forEach(product_id => {
+        //     if (product_id === props.id) {
+        //         amount++;
+        //     }
+        // })
+
+        // return amount;
+    })
+
     return (
 
         <div className="product-list__product product">
@@ -23,6 +47,12 @@ export default function Product(props) {
             <div className="product__name">{ props.name }</div>
 
             <button className="product__add-to-cart" onClick={ addToCart }>Add to cart</button>
+
+            {
+                amount_in_cart ? (
+                    <div className="product__amount-in-cart">{ amount_in_cart } already in cart</div>
+                ) : ''
+            }
 
         </div>
     )
