@@ -1,0 +1,29 @@
+.box {
+
+    // state of the box before the animation
+
+}
+
+.box--animated {
+
+    // apply the animation here
+
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes slidein {
+    0% {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    100% {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
