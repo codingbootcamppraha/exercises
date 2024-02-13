@@ -1,9 +1,6 @@
 <?php
 
-session_start();
-
-require_once 'DBBlackbox.php';
-require_once 'Song.php';
+require_once 'bootstrap.php';
 
 // get the id from the URL
 $id = $_GET['id'] ?? null;
@@ -27,11 +24,10 @@ if (empty($_POST['author'])) {
 }
 
 if (!$valid) {
-    $_SESSION['errors'] = $errors;
-    $_SESSION['request_data'] = $_POST;
+    session()->flash('errors', $errors);
+    session()->flashRequest();
 
-    header('Location: edit.php?id=' . $id);
-    exit();
+    redirect('edit.php?id=' . $id);
 }
 
 // retrieve the correct song from the database
@@ -49,5 +45,4 @@ update($id, $song);
 $_SESSION['success_message'] = 'Song #' . $id . ' successfully updated';
 
 // redirect the user to edit form for this song
-header('Location: edit.php?id=' . $id);
-exit();
+redirect('edit.php?id=' . $id);

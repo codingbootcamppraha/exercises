@@ -1,9 +1,6 @@
 <?php
 
-session_start();
-
-require_once 'DBBlackbox.php';
-require_once 'Song.php';
+require_once 'bootstrap.php';
 
 $valid = true;
 $errors = [];
@@ -19,8 +16,8 @@ if (empty($_POST['author'])) {
 }
 
 if (!$valid) {
-    $_SESSION['errors'] = $errors;
-    $_SESSION['request_data'] = $_POST;
+    session()->flash('errors', $errors);
+    session()->flashRequest();
 
     header('Location: create.php');
     exit();
