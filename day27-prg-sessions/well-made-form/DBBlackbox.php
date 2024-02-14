@@ -200,7 +200,9 @@ class DBBlackbox
             $object = new $class;
 
             foreach ($data as $key => $value) {
-                $object->{$key} = $value;
+                if (property_exists($object, $key)) {
+                    $object->{$key} = $value;
+                }
             }
         }
 
