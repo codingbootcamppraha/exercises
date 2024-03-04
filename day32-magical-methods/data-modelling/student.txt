@@ -1,0 +1,34 @@
+students
+-------------------
+id:             int
+name:           VARCHAR(255)
+age:            INT
+gpa:            DECIMAL(5, 3)
+gender:         VARCHAR(32)
+tuition_paid:   TINYINT(1)
+does_sports:    TINYINT(1)
+is_teacher:     TINYINT(1)
+admission_date: DATE
+has_graduated:  TINYINT(1)
+
+
+contacts
+---------
+id:             INT
+student_id:     INT
+email:          VARCHAR(255)
+phone:          VARCHAR(64)
+
+
+semesters
+----------
+id:             INT
+year:           INT(4)
+name:           VARCHAR(255)
+
+
+semester_student
+-----------------
+id:             INT
+semester_id:    INT
+student_id:     INT
