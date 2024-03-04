@@ -1,5 +1,7 @@
 <?php
 
+namespace PolakJan\Tools;
+
 class Session
 {
     // ---- STATIC ----------------------------------------

@@ -1,5 +1,7 @@
 <?php
 
+use PolakJan\Tools\Session;
+
 /**
  * functions that help us easily call long class/method names
  */
