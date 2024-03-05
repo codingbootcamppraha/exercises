@@ -1,0 +1,56 @@
+.user-list {
+  font-family: Arial, Helvetica, sans-serif;
+
+  &__container {
+    display: flex;
+    background: transparent url('/user.png') left top/5em auto no-repeat scroll;
+    min-height: 7em;
+  }
+
+  &__users {
+    margin-left: 7em;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: space-between;
+
+    &:nth-child(odd) {
+      background-color: #f7f7f7;
+    }
+  }
+
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+  }
+
+  &__user-actions {
+    margin-left: 1em;
+    display: flex;
+    align-items: flex-start;
+
+    a {
+      width: 2em;
+      height: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ddd;
+
+      &:hover {
+        background-color: #eee;
+      }
+
+      img {
+        height: 1.5em;
+      }
+    }
+  }
+
+  &__email {
+    font-style: italic;
+    font-size: 0.875em;
+  }
+}
