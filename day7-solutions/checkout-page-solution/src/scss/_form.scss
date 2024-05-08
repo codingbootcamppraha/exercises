@@ -1,0 +1,74 @@
+.form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  	width: 65%;
+  	background-color: $blue;
+	box-shadow: $shadow-dark;
+  	border-radius: 1rem;
+  	position: absolute;
+  	top: calc(50% - 127.5px);
+  	right: -15%;
+  	padding: 2rem;
+
+	&-field {
+		width: 100%;
+		margin-bottom: 1rem;
+
+		&:nth-child(3), &:last-child {
+			width: 40%;
+			margin-bottom: 0;
+		}
+	}
+
+	&-label {
+		display: block;
+		color: rgba($white, 0.7);
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		margin-bottom: 0.25rem;
+	}
+
+	&-input {
+		width: 100%;
+		color: rgba($white, 0.9);
+		background-color: rgba($white, 0.1);
+		border: none;
+		border-radius: 0.25rem;
+		font-size: 1rem;
+		outline: none;
+		padding: 0.5rem 0.75rem;
+		transition: 0.2s;
+		
+		&:focus {
+			background-color: rgba($white, 0.2);
+		}
+
+		&::placeholder {
+			color: rgba($white, 0.4);
+		}
+
+		&-group {
+			display: flex;
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		width: 80%;
+		top: 85%;
+    	right: 10%;
+	}
+
+}
+
+// Hide Input Type Number Arrows
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	appearance: textfield;
+	-moz-appearance: textfield;
+}

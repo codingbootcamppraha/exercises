@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Checkout Page</title>
+		<link rel="stylesheet" type="text/css" href="./src/scss/main.scss">
+	</head>
+
+	<body>
+
+		<div class="payment">
+			<div class="payment-info">
+				<div class="payment-total">
+					<div class="payment-label">Total</div>
+					<h3>$698</h3>
+				</div>
+				
+				<div class="payment-details">
+					<div class="payment-label">Detail</div>
+					<div class="payment-item">Product One <span>$599</span></div>
+					<div class="payment-item">Product Two <span>$99</span></div>
+				</div>
+
+				<button class="button">Pay now</button>
+			</div>
+
+			<form class="form">
+				<div class="form-field">
+				<label class="form-label">Name</label>
+					<input type="text" class="form-input" placeholder="John Doe" />
+				</div>
+
+				<div class="form-field">
+				<label class="form-label">Card Number</label>
+					<input type="number" class="form-input" placeholder="1111 1111 1111 1111" />
+				</div>
+
+				<div class="form-field">
+				<label class="form-label">Expiration Date</label>
+					<div class="form-input-group">
+						<input type="number" class="form-input" placeholder="MM" />
+						<input type="number" class="form-input" placeholder="YYYY" />
+					</div>
+				</div>
+
+				<div class="form-field">
+				<label class="form-label">CVV</label>
+					<input type="number" class="form-input" placeholder="123" />
+				</div>
+			</form>
+		</div>
+		
+	</body>
+</html>

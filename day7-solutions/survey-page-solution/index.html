@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Survey Page</title>
+		<link rel="stylesheet" type="text/css" href="./scss/main.scss">
+	</head>
+
+	<body>
+		<h1 class="heading">Feedback Form</h1>
+
+		<form class="form">
+			<div class="form-field">
+				<label class="form-label">Name</label>
+				<input type="text" class="form-input" />
+			</div>
+
+			<div class="form-field">
+				<label class="form-label">Email</label>
+				<input type="email" class="form-input" />
+			</div>
+
+			<div class="form-field">
+				<label for="batch" class="form-label">Choose Batch</label>
+				
+				<select id="batch" class="form-select">
+					<option value="winter">Winter 2023</option>
+					<option value="spring">Spring 2023</option>
+					<option value="autumn">Autumn 2023</option>
+				</select>
+			</div>
+
+			<div class="form-field">
+				<label class="form-label">Did you complete all the exercises from Week 1?</label>
+				
+				<label for="yes" class="form-label form-label-radio">
+					<input type="radio" id="yes" name="exercises" value="yes" />
+					Yes
+				</label>
+
+				<label for="no" class="form-label form-label-radio">
+					<input type="radio" id="no" name="exercises" value="no" />
+					No
+				</label>
+			</div>
+
+			<div class="form-field">
+				<label class="form-label">Choose your favorite exercises</label>
+				
+				<label for="selectors" class="form-label form-label-checkbox">
+					<input type="checkbox" id="selectors" name="selectors" value="selectors">
+					CSS selectors
+				</label>
+
+				<label for="book" class="form-label form-label-checkbox">
+					<input type="checkbox" id="book" name="book" value="book">
+					Book page
+				</label>
+
+				<label for="kindergarten" class="form-label form-label-checkbox">
+					<input type="checkbox" id="kindergarten" name="kindergarten" value="kindergarten">
+					Belfast International Kindergarten
+				</label>
+
+				<label for="crownsnest" class="form-label form-label-checkbox">
+					<input type="checkbox" id="crownsnest" name="crownsnest" value="crownsnest">
+					Crownsnest Retreat
+				</label>
+
+				<label for="google" class="form-label form-label-checkbox">
+					<input type="checkbox" id="google" name="google" value="google">
+					Google page
+				</label>
+
+				<label for="documentation" class="form-label form-label-checkbox">
+					<input type="checkbox" id="documentation" name="documentation" value="documentation">
+					Documentation page
+				</label>
+
+				<label for="portfolio" class="form-label form-label-checkbox">
+					<input type="checkbox" id="portfolio" name="portfolio" value="portfolio">
+					Aneta Webbie Personal Portfolio
+				</label>
+			</div>
+
+			<div class="form-field">
+				<label class="form-label">Write feedback</label>
+				<textarea rows="4" class="form-textarea"></textarea>
+			</div>
+
+			<div class="form-field">
+				<button type="submit" class="form-btn">Submit</button>
+			</div>
+		</form>
+	</body>
+</html>

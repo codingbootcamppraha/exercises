@@ -1,0 +1,114 @@
+$white: #ffffff;
+$dark-blue: #001555;
+    
+* {
+    box-sizing: border-box;
+}
+    
+html, body {
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: $dark-blue;
+    margin: 0;
+    padding: 0;
+}
+
+.heading {
+    color: $white;
+    text-align: center;
+}
+
+.form {
+    width: 85%;
+    background-color: #405080;
+    border-radius: 0.25rem;
+    margin: 2rem auto;
+    padding: 2rem;
+
+    &-field {
+        margin-bottom: 1.5rem;
+    }
+
+    &-label {
+        display: block;
+        color: rgba($white, 0.8);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        margin-bottom: 0.25rem;
+
+        &-checkbox, 
+        &-radio {
+            color: $white;
+            font-size: 1rem;
+            text-transform: none;
+        }
+    }
+
+    &-input,
+    &-textarea,
+    &-select {
+        width: 100%;
+        background-color: $white;
+        border: 1px solid $dark-blue;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        outline: none;
+        padding: 0.5rem 1rem;
+        transition: 0.2s;
+
+        &:focus {
+            background-color: rgba($white, 0.75);
+        }
+    }
+
+    &-textarea {
+        font-family: sans-serif;
+        resize: none;
+    }
+
+    &-btn {
+        display: block;
+        color: $dark-blue;
+        background-color: $white;
+        border: 1px solid $white;
+        border-radius: 0.25rem;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin: 0 auto;
+        margin-top: 2.5rem;
+        padding: 0.75rem 2rem;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+            color: $white;
+            background-color: transparent;
+        }
+    }
+
+    @media screen and (min-width: 550px) {
+        width: 75%;
+    }
+
+    @media screen and (min-width: 700px) {
+        width: 60%;
+    }
+
+    @media screen and (min-width: 850px) {
+        width: 50%;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 40%;
+    }
+}
+    
+    
+    
+    
+    
+    

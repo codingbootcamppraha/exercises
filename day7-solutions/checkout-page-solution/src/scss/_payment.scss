@@ -1,0 +1,61 @@
+.payment {
+	display: flex;
+	width: 40rem;
+	background-color: $white;
+	border-radius: 0.5rem;
+	box-shadow: $shadow-light;
+	position: relative;
+
+	&-info {
+		width: 50%;
+		text-align: center;
+		padding: 4rem;
+
+		h3 {
+			color: $blue;
+			font-size: 2rem;
+			margin-top: 0;
+			margin-bottom: 2.5rem;
+		}
+
+		@media screen and (max-width: 1000px) {
+			display: block;
+			width: 60%;
+			margin: auto;
+		}
+
+		@media screen and (max-width: 500px) {
+			width: 80%;
+		}
+	}
+
+	&-label {
+		color: $gray;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+	}
+
+	&-item {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 300;
+		margin-bottom: 0.5rem;
+
+		span {
+			color: $blue;
+			font-weight: bold;
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		display: block;
+		width: 30rem;
+		margin-bottom: 5rem;
+	}
+
+	@media screen and (max-width: 500px) {
+		width: 25rem;
+		margin-bottom: 5rem;
+	}
+}
