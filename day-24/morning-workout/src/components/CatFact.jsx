@@ -5,7 +5,7 @@ function CatFact() {
     const [catFact, setCatFact] = useState(null);
 
     const fetchCatFact = async () => {
-        const response = await fetch('https://catfact.ninja/fact');
+        const response = await fetch('http://www.cbp-exercises.test/morning-workout/');
         const data = await response.json();
         setCatFact(data.fact);
     }

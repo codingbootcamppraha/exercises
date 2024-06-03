@@ -68,18 +68,18 @@ echo '<h2>:)</h2>'
 ?>
 
 <?php
-function test($a, $b = 'default', $c = 'default')
-{
-    return 'THIS IS A GOOD WAY';
-}
+// function test($a, $b = 'default', $c = 'default')
+// {
+//     return 'THIS IS A GOOD WAY';
+// }
 
-test('a_value');
+// test('a_value');
 
 
-function testb($a = 'default', $b)
-{
-    return 'THIS IS A BAD WAY';
-}
+// function testb($a = 'default', $b)
+// {
+//     return 'THIS IS A BAD WAY';
+// }
 
 // testb('a_value'); // will cause too few arguments error
 ?>
@@ -88,44 +88,56 @@ function testb($a = 'default', $b)
 /**
  * raises the value of it's argument
  */
-function myFooFunction($bar) 
+function myFooFunction($bar)
 {
     // $bar is a reference to the variable the function is called with
- 
+
     $bar = 'test';
 }
- 
+
 $foo = 1;
- 
+
 // $foo is 1
 echo $foo;
- 
+
 myFooFunction($foo);
 
 // $foo is still 1
 echo $foo;
- 
+
 ?>
 
 <?php
 /**
  * raises the value of it's argument
  */
-function myFooFunctionReference(&$bar) 
+function myFooFunctionReference(&$bar)
 {
     // $bar is a reference to the variable the function is called with
- 
+
     $bar = 'test';
 }
- 
+
 $foo = 1;
- 
+
 // $foo is 1
 echo $foo;
- 
+
 myFooFunctionReference($foo);
 
 // $foo is 'test'
 echo $foo;
- 
+
+?>
+<br>
+
+<!-- Arrays- -->
+<?php
+$arr = [
+    3 => 1,
+    2 => 2,
+    10 => 3
+];
+
+echo $arr[3];
 ?>
