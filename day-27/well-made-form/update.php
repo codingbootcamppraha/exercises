@@ -2,7 +2,9 @@
 require_once 'bootstrap.php';
 require_once 'Order.php';
 
-$session = Session::instance();
+$session = session();
+
+$session->flashRequest();
 
 $order = find($_GET['id'], 'Order');
 
@@ -43,7 +45,7 @@ update($_GET['id'], $order);
 
 // flash message with session:
 // $_SESSION['message'] = 'Order with id #' . $order->id . ' has been updated';
-session()->put('message', 'Order with id #' . $order->id . ' has been updated');
+session()->flash('message', 'Order with id #' . $order->id . ' has been updated');
 // redirection:
 header('Location: /day-26/well-made-form/edit.php?id='.$order->id);
 die();

@@ -2,7 +2,7 @@
 require_once 'bootstrap.php';
 require_once 'Order.php';
 
-$session = Session::instance();
+$session = session();
 
 var_dump($session);
 
@@ -11,13 +11,8 @@ $order = find($_GET['id'], 'Order');
 
 // $message = $_SESSION['message'] ?? null;
 $message = session()->get('message');
-unset($_SESSION['message']);
 
 $errors = $_SESSION['validation_errors'] ?? [];
-unset($_SESSION['validation_errors']);
-
-
-
 ?>
 
 <?php if ($message) : ?>
@@ -39,7 +34,7 @@ unset($_SESSION['validation_errors']);
     <br>Address: <br>
     <input type="text" name="address" value="<?= $order->address ?>">
     <br>Email: <br>
-    <input type="text" name="email" value="<?= $order->email ?>">
+    <input type="text" name="email" value="<?= old('email', $order->email) ?>">
 
     <h2>ORDER INFORMATION</h2>
     <br>Description: <br>

@@ -3,6 +3,7 @@ class Session
 {
     public static $instance = null;
     public $data = null;
+    public $old_request = null;
 
     public static function instance()
     {
@@ -16,8 +17,15 @@ class Session
     protected function __construct()
     {
         session_start();
-
         $this->data = $_SESSION;
+
+        // add flashed data (success/error messages)
+        $this->data = array_merge($this->data, $_SESSION['flashed_data'] ?? []);
+        unset($_SESSION['flashed_data']);
+
+        // add flashed request
+        $this->old_request = $_SESSION['flashed_request'] ?? [];
+        unset($_SESSION['flashed_request']);
     }
 
     public function put($key, $value)
@@ -31,9 +39,23 @@ class Session
         return $this->data[$key] ?? $default;
     }
 
-    //
+    public function flash($key, $value)
+    {
+        $_SESSION['flashed_data'][$key] = $value;
+    }
+    
+    public function flashRequest()
+    {
+        $_SESSION['flashed_request'] = $_POST;
+    }
+
+    public function old($key, $default = null)
+    {
+        return $this->old_request[$key] ?? $default;
+    }
 }
 
-// Session::instance
+// Session::instance()
+// Session::data !!!!   < session()->data
 ?>
 
