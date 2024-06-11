@@ -11,10 +11,6 @@ class MovieController extends Controller
 {
     public function index()
     {
-        $movie = Movie::find(111161);
-
-        dd($movie->originCountries);
-
         $movies = Movie::where('votes_nr', '>=', 10000)
             ->limit(20)
             ->orderBy('name')
