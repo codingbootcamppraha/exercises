@@ -10,10 +10,10 @@ body {
     display: flex;
     justify-content: center;
 }
-
+/* 
 .conversation {
-
-}
+    
+} */
 
 .message {
     width: 20em;

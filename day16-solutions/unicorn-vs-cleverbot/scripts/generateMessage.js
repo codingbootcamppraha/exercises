@@ -1,9 +1,16 @@
-import Message from "./Message";
+import LocalMessage from "./LocalMessage";
+import RemoteMessage from "./RemoteMessage";
 
 const generateMessage = (messageData, container) => {
-    const newMessageObject = new Message(messageData.side, messageData.name, messageData.text);
 
-    container.addMessage(newMessageObject.createMessageHtml());
+    if (messageData.side === 'local') {
+        const newMessageObject = new LocalMessage(messageData.side, messageData.name, messageData.text);
+        container.addMessage(newMessageObject.createMessageHtml());
+    } else {
+        const newMessageObject = new RemoteMessage(messageData.side, messageData.name, messageData.text);
+        container.addMessage(newMessageObject.createMessageHtml());
+    }
+
     // container.addMessage() > container.innerHtml += ...
 }
 

@@ -1,8 +1,8 @@
 import Message from "./Message";
 
 export default class RemoteMessage extends Message {
-    constructor() {
-        super();
+    constructor(side, name, text) {
+        super(side, name, text);
 
         this.colour = "blue";
     }
@@ -10,5 +10,4 @@ export default class RemoteMessage extends Message {
     reactToIt = () => {
 
     }
-
 }
