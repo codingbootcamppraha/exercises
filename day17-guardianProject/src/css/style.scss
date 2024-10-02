@@ -1,0 +1,16 @@
+
+.category_list {
+    display: flex;
+    gap: 1rem;
+
+    .btn {
+        background-color: lightblue;
+        padding: 0.5rem 1rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: rgb(152, 195, 210);
+            cursor: pointer;
+        }
+    }
+}
