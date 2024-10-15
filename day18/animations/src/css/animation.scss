@@ -1,0 +1,43 @@
+.box {
+
+    // state of the box before the animation
+
+}
+
+.box--animated {
+    position: absolute;
+    background-color: black;
+
+    // apply the animation here
+
+    animation-name: slidein;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+
+@keyframes slidein {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+
+    20% {
+        left: 10px;
+        top: 10px;
+    }
+
+    40%, 60% {
+        left: 400px;
+        top: 400px;
+    }
+
+    100% {
+        left: 500px;
+        top: 500px;
+    }
+}

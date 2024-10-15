@@ -1,0 +1,14 @@
+.alert {
+    background-color: rgb(255, 235, 235);
+    border: 1px solid red;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}

@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.button {
+  display: block;
+  margin: 2rem auto;
+}
+
+.quote {
+  max-width: 40rem;
+}
+
+.quote img {
+  display: block;
+  margin: 2rem auto;
+}
+
+.error {
+  color: red;
+}

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:regular,700,900');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  
+  margin: 0;
+  
+  width: 100%;
+  height: 100vh;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.rating {
+  text-align: center;
+  width: 10rem;
+}
+
+.rating-value {
+  color: lightgray;
+  
+  line-height: 6rem;
+  font-size: 6rem;
+  font-weight: 900;
+}
+
+.rating-stars {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating-star {
+  width: 2rem;
+  height: 2rem;
+  
+  background-image: url('img/star-white.svg');
+  background-size: contain;
+  
+  cursor: pointer;
+}
+
+.rating-star__on {
+  background-image: url('img/star-yellow.svg');
+}
